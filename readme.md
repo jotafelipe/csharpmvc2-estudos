@@ -28,4 +28,19 @@ proprietário garantir que esse software funcione e/ou seja "bug-free".
 
 ====
 
+## Instruções para rodar o software:
+
+1. Certifique-se que você tem o .NET Framework 3.5 instalado (Não foi testado com outras versões ainda);
+
+2.  Crie o Banco de Dados e as tabelas rodando o conteúdo do arquivo no _Manager_ (prompt/Management Studio/sinal de fumaça) do SQL Server:
+	`CSharpMVC2.Resources.CSHARP_MVC2_MSSQL2005_TABELAS.sql`;
+
+3.  Opcional: Rode também o arquivo `CSharpMVC2.Resources.CSHARP_MVC2_MSSQ2005_REGISTROS_DEFAULT.sql`;
+
+4. Crie um usuário e um login no SQL Server com o nome e senha ´testefelipe´, ou modifique o arquivo `CSharpMVC2.Resources.hibernate.cfg.xml` e insira o usuário e senha que você colocou no SQL Server;
+
+5. Rode a aplicação pelo **Visual Studio 2010**, ou faça build e insira em algum IIS que rode o .NET3.5 e MVC2.
+
+---- 
+
 ###### Juliano André Felipe - 2014
