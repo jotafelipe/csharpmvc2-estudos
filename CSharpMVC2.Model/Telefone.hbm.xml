@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+        assembly="CSharpMVC2.Model" namespace="CSharpMVC2.Model">
+    <class name="Telefone" table="CM_TB_TELEFONE">
+        <id name="Id" column="ID" type="int">
+            <generator class="identity" />
+        </id>
+        <property name="Ddd" column="DDD" type="int" not-null="true"/>
+        <property name="Fone" column="FONE" type="string" length="9"
+                not-null="true"/>
+        <many-to-one name="Pessoa" column="ID_PESSOA" cascade="all"
+                not-null="false" lazy="false"/>
+        <many-to-one name="TipoTelefone" column="ID_TIPO_TELEFONE"
+                cascade="save-update" not-null="false" lazy="false"/>
+        <property name="IsAtivo" column="IS_ATIVO" type="bool"
+                not-null="false">
+            <column name="IS_ATIVO" default="1"/>
+        </property>
+    </class>
+</hibernate-mapping>

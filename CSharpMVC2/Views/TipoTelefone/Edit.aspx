@@ -1,0 +1,56 @@
+﻿<%@ page title="" language="C#" masterpagefile="~/Views/Shared/Site.Master" inherits="System.Web.Mvc.ViewPage<CSharpMVC2.Model.TipoTelefone>" %>
+
+<asp:content id="Content1" contentplaceholderid="head" runat="server">
+    <script src="../../js/View/TipoTelefone.js" type="text/javascript"></script>
+</asp:content>
+<asp:content id="Content2" contentplaceholderid="TitleContent" runat="server">
+    <%= CSharpMVC2.Util.Constantes.APP_NAME %>
+    / Tipo de Telefone
+</asp:content>
+<asp:content id="Content3" contentplaceholderid="MainContent" runat="server">
+    <br />
+    <br />
+    <h1>
+        Tipo de Telefone</h1>
+    <h3 style="margin-left: 60px;">
+        <%= Html.Encode(Model.Descricao) %></h3>
+    <br />
+    <% Html.RenderPartial(CSharpMVC2.Util.Constantes.PAGINA_MENSAGENS); %>
+    <br />
+    <% using(Html.BeginForm("Edit", "TipoTelefone", FormMethod.Post,
+            new {
+                @class = "form-horizontal"
+            })) { %>
+    <%= Html.ValidationSummary(true) %>
+    <div class="form-group">
+        <%= Html.LabelFor(model => model.Descricao,
+                new { @class="col-sm-1 control-label" }) %>
+        <div class="input-group col-sm-2">
+            <%= Html.TextBoxFor(model => model.Descricao,
+                    new { @class="form-control", id = "txtDescricao" })%>
+            <span class="input-group-addon">
+                <i id="msgDescricao" class="glyphicon glyphicon-remove">
+                </i>
+            </span>
+        </div>
+    </div>
+    <div class="form-group">
+        <%= Html.LabelFor(model => model.IsAtivo,
+                new { @class="col-sm-1 control-label" }) %>
+        <div class="col-sm-2">
+            <%= Html.CheckBoxFor(model => model.IsAtivo,
+                    new { @class="checkbox", style="width: 25px;" }) %>
+        </div>
+    </div>
+    <br />
+    <br />
+    <button type="submit" class="btn btn-primary btn-lg" value="Save">
+        Salvar
+    </button>
+    <% } %>
+    <br />
+    <div>
+        <%= Html.ActionLink("Voltar", "Index", "TipoTelefone", new { page = 0 },
+                new { @class="btn btn-default pull-right" }) %>
+    </div>
+</asp:content>
