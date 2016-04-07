@@ -1,4 +1,4 @@
-  ﻿/*
+﻿/*
  * Propriedade de Juliano André Felipe.
  *
  * Esse software é informação pública e grátis para fins não comerciais.
